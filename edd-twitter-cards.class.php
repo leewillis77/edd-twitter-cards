@@ -30,9 +30,9 @@ class EddTwitterCards {
 			'twitter:site'        => get_bloginfo( 'name', 'raw' ),
 			'twitter:title'       => $object->post_title,
 			'twitter:description' => substr( $this->excerpt_by_id( $object->ID, 5 ), 0, 200 ),
-			'twitter:label1'      => 'Price',
+			'twitter:label1'      => 'PRICE',
 			'twitter:data1'       => $this->get_prices( $object ),
-			'twitter:label2'      => 'Category',
+			'twitter:label2'      => 'CATEGORY',
 			'twitter:data2'       => implode(
 				', ',
 				wp_get_object_terms(
