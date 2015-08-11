@@ -26,22 +26,12 @@ class EddTwitterCards {
 
 		// Populate the basic data.
 		$meta = array(
-			'twitter:card'        => 'product',
+			'twitter:card'        => 'summary',
 			'twitter:site'        => get_bloginfo( 'name', 'raw' ),
 			'twitter:title'       => $object->post_title,
-			'twitter:description' => substr( $this->excerpt_by_id( $object->ID, 5 ), 0, 200 ),
-			'twitter:label1'      => 'PRICE',
-			'twitter:data1'       => $this->get_prices( $object ),
-			'twitter:label2'      => 'CATEGORY',
-			'twitter:data2'       => implode(
-				', ',
-				wp_get_object_terms(
-					array( $object->ID ),
-					array( 'download_category' ),
-					array( 'fields' => 'names' )
-				)
-			),
+			'twitter:description' => substr( $this->excerpt_by_id( $object->ID, 5 ), 0, 150 ) . "\n" . $this->get_prices( $object ),
 		);
+
 
 		// Add featured image if it exists.
 		$image_src = $this->get_post_thumbnail_src( $object );
